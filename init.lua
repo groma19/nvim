@@ -23,6 +23,38 @@ require("lazy").setup({
     branch = "v2.5",
     import = "nvchad.plugins",
   },
+  {
+    "mistweaverco/kulala.nvim",
+    ft = { "http", "rest" },
+    keys = {
+      {
+        "<leader>kr",
+        function()
+          require("kulala").run()
+        end,
+        desc = "Kulala: Run request",
+      },
+      {
+        "<leader>ka",
+        function()
+          require("kulala").run_all()
+        end,
+        desc = "Kulala: Run all requests",
+      },
+      {
+        "<leader>kl",
+        function()
+          require("kulala").replay()
+        end,
+        desc = "Kulala: Replay last request",
+      },
+    },
+    config = function()
+      require("kulala").setup {
+        -- optional config
+      }
+    end,
+  },
 
   { import = "plugins" },
 }, lazy_config)
