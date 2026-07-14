@@ -141,13 +141,6 @@ require("lazy").setup({
       end
     end,
   },
-  {
-    "windwp/nvim-ts-autotag",
-    event = { "BufReadPre", "BufNewFile" },
-    ft = {},
-    opts = {},
-  },
-
   { import = "plugins" },
 }, lazy_config)
 
