@@ -10,8 +10,6 @@ if not vim.uv.fs_stat(lazypath) then
 end
 
 vim.opt.rtp:prepend(lazypath)
-vim.opt.clipboard = "unnamedplus"
-vim.opt.relativenumber = true
 
 local lazy_config = require "configs.lazy"
 
