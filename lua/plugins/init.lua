@@ -81,9 +81,54 @@ return {
         end,
         desc = "DAP: Step Out",
       },
+      {
+        "<leader>dt",
+        function()
+          require("dap").terminate()
+        end,
+        desc = "DAP: Terminate",
+      },
+    },
+    config = function()
+      local dap = require "dap"
+      dap.adapters.codelldb = {
+        type = "server",
+        port = "${port}",
+        executable = {
+          command = vim.fn.stdpath "data" .. "/mason/bin/codelldb",
+          args = { "--port", "${port}" },
+        },
+      }
+      dap.configurations.cpp = {
+        {
+          name = "Launch",
+          type = "codelldb",
+          request = "launch",
+          program = function()
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/build/", "file")
+          end,
+          cwd = "${workspaceFolder}",
+          stopOnEntry = false,
+        },
+      }
+      dap.configurations.c = dap.configurations.cpp
+    end,
+  },
+  {
+    "Civitasv/cmake-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    ft = { "cpp", "c", "cmake" },
+    opts = {
+      cmake_build_directory = "build",
+      cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" },
+    },
+    keys = {
+      { "<leader>cg", "<cmd>CMakeGenerate<cr>", desc = "CMake Generate" },
+      { "<leader>cb", "<cmd>CMakeBuild<cr>", desc = "CMake Build" },
+      { "<leader>cr", "<cmd>CMakeRun<cr>", desc = "CMake Run" },
+      { "<leader>cd", "<cmd>CMakeDebug<cr>", desc = "CMake Debug" },
     },
   },
-
   {
     "leoluz/nvim-dap-go",
     ft = "go",
@@ -137,6 +182,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
+        "c",
+        "cpp",
+        "cmake",
         "vim",
         "lua",
         "vimdoc",
