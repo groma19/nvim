@@ -187,6 +187,12 @@ return {
       { "<leader>lo", "<cmd>Love output<cr>", desc = "Output panel" },
     },
   },
+  {
+    "windwp/nvim-ts-autotag",
+    event = { "BufReadPre", "BufNewFile" },
+    ft = {},
+    opts = {},
+  },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
@@ -211,6 +217,11 @@ return {
         "yaml",
         "toml",
         "dockerfile",
+        "javascript",
+        "typescript",
+        "tsx",
+        "html",
+        "css",
       },
     },
   },
