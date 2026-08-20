@@ -1,10 +1,8 @@
 return {
   {
     "stevearc/conform.nvim",
-    -- event = 'BufWritePre', -- uncomment for format on save
     opts = require "configs.conform",
   },
-
   {
     "neovim/nvim-lspconfig",
     config = function()
@@ -37,11 +35,6 @@ return {
         desc = "Kulala: Replay last request",
       },
     },
-    config = function()
-      require("kulala").setup {
-        -- optional config
-      }
-    end,
   },
   {
     "mfussenegger/nvim-dap",
@@ -164,10 +157,6 @@ return {
       end
     end,
   },
-
-  -- test new blink
-  -- { import = "nvchad.blink.lazyspec" },
-
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
@@ -181,6 +170,7 @@ return {
         "json",
         "sql",
         "bash",
+        "fish",
         "markdown",
         "yaml",
         "toml",
