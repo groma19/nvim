@@ -158,6 +158,19 @@ return {
     end,
   },
   {
+    "S1M0N38/love2d.nvim",
+    version = "3.*",
+    event = "VeryLazy",
+    opts = { lsp = false }, -- we configure lua_ls ourselves
+    keys = {
+      { "<leader>lr", "<cmd>Love run<cr>", desc = "Run LÖVE" },
+      { "<leader>lw", "<cmd>Love watch<cr>", desc = "Watch LÖVE" },
+      { "<leader>ls", "<cmd>Love stop<cr>", desc = "Stop LÖVE" },
+      { "<leader>li", "<cmd>Love info<cr>", desc = "Info LÖVE" },
+      { "<leader>lo", "<cmd>Love output<cr>", desc = "Output panel" },
+    },
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
