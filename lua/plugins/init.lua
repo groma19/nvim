@@ -37,6 +37,21 @@ return {
     },
   },
   {
+    "Civitasv/cmake-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    ft = { "cpp", "c", "cmake" },
+    opts = {
+      cmake_build_directory = "build",
+      cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" },
+    },
+    keys = {
+      { "<leader>cg", "<cmd>CMakeGenerate<cr>", desc = "CMake Generate" },
+      { "<leader>cb", "<cmd>CMakeBuild<cr>", desc = "CMake Build" },
+      { "<leader>cr", "<cmd>CMakeRun<cr>", desc = "CMake Run" },
+      { "<leader>cd", "<cmd>CMakeDebug<cr>", desc = "CMake Debug" },
+    },
+  },
+  {
     "mfussenegger/nvim-dap",
     keys = {
       {
@@ -106,21 +121,6 @@ return {
       }
       dap.configurations.c = dap.configurations.cpp
     end,
-  },
-  {
-    "Civitasv/cmake-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    ft = { "cpp", "c", "cmake" },
-    opts = {
-      cmake_build_directory = "build",
-      cmake_generate_options = { "-DCMAKE_EXPORT_COMPILE_COMMANDS=1" },
-    },
-    keys = {
-      { "<leader>cg", "<cmd>CMakeGenerate<cr>", desc = "CMake Generate" },
-      { "<leader>cb", "<cmd>CMakeBuild<cr>", desc = "CMake Build" },
-      { "<leader>cr", "<cmd>CMakeRun<cr>", desc = "CMake Run" },
-      { "<leader>cd", "<cmd>CMakeDebug<cr>", desc = "CMake Debug" },
-    },
   },
   {
     "rcarriga/nvim-dap-ui",
