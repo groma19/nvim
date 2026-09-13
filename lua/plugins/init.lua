@@ -123,6 +123,16 @@ return {
     end,
   },
   {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      require("dap-go").setup()
+    end,
+  },
+  {
     "rcarriga/nvim-dap-ui",
     dependencies = {
       "mfussenegger/nvim-dap",
@@ -170,6 +180,9 @@ return {
         "c",
         "cpp",
         "cmake",
+        "go",
+        "gomod",
+        "gowork",
         "vim",
         "lua",
         "vimdoc",
