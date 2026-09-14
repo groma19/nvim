@@ -168,12 +168,6 @@ return {
     end,
   },
   {
-    "windwp/nvim-ts-autotag",
-    event = { "BufReadPre", "BufNewFile" },
-    ft = {},
-    opts = {},
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       ensure_installed = {
@@ -194,11 +188,6 @@ return {
         "yaml",
         "toml",
         "dockerfile",
-        "javascript",
-        "typescript",
-        "tsx",
-        "html",
-        "css",
       },
     },
   },

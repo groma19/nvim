@@ -5,12 +5,6 @@ local options = {
     cpp = { "clang-format" },
     go = { "gofmt" },
     json = { "jq" },
-    javascript = { "prettierd" },
-    javascriptreact = { "prettierd" },
-    typescript = { "prettierd" },
-    typescriptreact = { "prettierd" },
-    css = { "prettierd" },
-    html = { "prettierd" },
   },
 }
 
