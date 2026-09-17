@@ -117,6 +117,7 @@ return {
           end,
           cwd = "${workspaceFolder}",
           stopOnEntry = false,
+          terminal = "integrated",
         },
       }
       dap.configurations.c = dap.configurations.cpp
